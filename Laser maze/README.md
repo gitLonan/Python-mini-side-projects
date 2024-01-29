@@ -9,12 +9,29 @@ Now you can putdown the mirrors "/" "\\", **you can also undo them** if you've m
 When you think you've cracked the maze just type **fire**
 
 
-### Some examples
+### Some examples of mirrors interaction
           ^
           ^
     >>>>>>/    >>>>>>\  >>>>>\
                      v       \>>>>>
                      v
+### Some example of 10x10 maze
+      1  2  3  4  5  6  7  8  9 10
+    ---------------------------------
+1  |  *  *  *  *  *  *  *  *  B  *  |
+2  |  *  *  *  *  *  *  *  *  *  *  |
+3  |  *  B  *  B  B  *  *  *  *  *  |
+4  S  *  *  *  *  *  *  *  *  *  *  |
+5  |  *  *  *  B  *  *  *  *  *  *  |
+6  |  *  B  *  *  *  *  *  *  *  *  F
+7  |  *  *  *  *  *  *  *  *  *  *  |
+8  |  *  *  *  B  *  *  B  *  *  *  |
+9  |  *  *  *  B  B  *  *  *  *  *  |
+10 |  *  *  *  B  *  *  *  *  *  *  |
+
+**S** - represents start
+**B** - represents bombs
+**F** - represents finish 
 
 ## Libraries Used
 
