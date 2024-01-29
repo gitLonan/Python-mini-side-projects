@@ -1,5 +1,4 @@
 import random, time, sys, os
-import time
 
 
 behaviour_agressive = "agressive"

@@ -43,6 +43,7 @@ Fun little automatic battle between two legendary (user named) knights. Choose t
 - **Clone the repository**: `git clone https://github.com/MujoHarac/Python-mini-side-projects.git`
 - Choose a project folder, navigate into it, and run the Python script.
 
+
 ## Technologies Used
 
 - Python 3.9.5
