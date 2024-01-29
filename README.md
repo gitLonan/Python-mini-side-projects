@@ -29,7 +29,7 @@
 
 - [Link to to Laser Maze README](./Laser%20maze/README.md)
 
-Your goal is to guide the laser using mirrors "/" and "\" to the finish line while avoiding bombs
+Your goal is to guide the laser using mirrors "/" and "\" to the finish line while avoiding bombs.\n
 For more detailed description press the link above ^^
 
 
