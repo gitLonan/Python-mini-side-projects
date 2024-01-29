@@ -5,15 +5,15 @@
 
 - [Project List](#project-list)
 - [Project Descriptions](#project-descriptions)
+- [Getting Started](#getting-started)
+- [Technologies used](#technologies-used)
 
 
 
 
 ## Description
 
-
-
-
+Welcome to the Python Mini Projects Repository!These are quick projects, design to be done mostly in **basic python libraries** just for the challenge of it
 
 
 
@@ -27,12 +27,21 @@
 
 ### Project 1: Laser Maze
 
-- [Link to to Laser Maze README](./Laser%20maze/README.md)
+- [Link to Laser Maze README](./Laser%20maze/README.md)
 
-Your goal is to guide the laser using mirrors "/" and "\" to the finish line while avoiding bombs.\n
-For more detailed description press the link above ^^
+-Your goal is to guide the laser using **mirrors** "/" and "\" to the finish line while avoiding bombs.
+-For more detailed description press the link above.
+
+### Project 2: Battle of Knights
+
+- [Link to Battle Knights README](./Battle%20of%20Knighs/README.md)
 
 
+
+## Getting Started:
+
+- **Clone the repository**: `git clone https://github.com/MujoHarac/Python-mini-side-projects.git`
+- Choose a project folder, navigate into it, and run the Python script.
 
 ## Technologies Used
 
