@@ -29,13 +29,13 @@ Welcome to the Python Mini Projects Repository!These are quick projects, design 
 
 - [Link to Laser Maze README](./Laser%20maze/README.md)
 
--Your goal is to guide the laser using **mirrors** "/" and "\" to the finish line while avoiding bombs.
--For more detailed description press the link above.
+Your goal is to guide the laser using **mirrors** "/" and "\\" to the finish line while avoiding bombs.For more detailed description press the link above.
 
 ### Project 2: Battle of Knights
 
 - [Link to Battle Knights README](./Battle%20of%20Knighs/README.md)
 
+Fun little automatic battle between two legendary (user named) knights. Choose their behavior and see who wins
 
 
 ## Getting Started:
