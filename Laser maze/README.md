@@ -16,6 +16,10 @@ When you think you've cracked the maze just type **fire**
                      v       \>>>>>
                      v
 
+## Libraries Used
+
+`import random, time, os, sys`
+
 
 
 
