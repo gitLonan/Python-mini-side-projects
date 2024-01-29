@@ -5,6 +5,8 @@
 
 - [Project List](#project-list)
 
+## Description
+**This text is in blue**: <span style="color:blue">This is some text!</span>
 
 ## Project List 
 1. [Project 1: Laser Maze](./Laser%20maze/)
