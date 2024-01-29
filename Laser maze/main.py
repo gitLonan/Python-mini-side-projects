@@ -1,6 +1,19 @@
 import random, time, os, sys
 
 
+class Style:
+    END_COLOR = '\x1b[0m'
+    BLACK = '\033[30m'
+    RED = '\033[31m'
+    GREEN = '\033[32m'
+    YELLOW = '\033[33m'
+    BLUE = '\033[34m'
+    MAGENTA = '\033[35m'
+    CYAN = '\033[36m'
+    WHITE = '\033[37m'
+    UNDERLINE = '\033[4m'
+    RESET = '\033[0m'
+
 
 def creatingNestedList_maze(col, row):
     """ Creates the map from users input"""
@@ -78,15 +91,17 @@ def bomb_creation(maze, col, row):
         maze[row_num_list[i]-1][col_num_list[i]] = "B"
 
 def mirror_placing(maze, mirror_col, mirror_row):
-    type_mirror = input("what type of mirror you want, / or \\ : ")
+    left_mirror = f"{Style.MAGENTA}\\{Style.END_COLOR}"
+    right_mirror = f"{Style.MAGENTA}/{Style.END_COLOR}"
+    type_mirror = input(f"{Style.BLUE}what type of mirror you want, / or \\ : {Style.END_COLOR}")
     if maze[mirror_row-1][mirror_col] == "B":
         return False
     if maze[mirror_row-1][mirror_col] == "|":
         return False
-    if maze[mirror_row-1][mirror_col] == "/" or maze[mirror_row-1][mirror_col] == "\\":
+    if maze[mirror_row-1][mirror_col] == right_mirror or maze[mirror_row-1][mirror_col] == left_mirror:
         maze[mirror_row-1][mirror_col] = "*"
         return True
-    maze[mirror_row-1][mirror_col] = type_mirror
+    maze[mirror_row-1][mirror_col] = Style.MAGENTA + type_mirror + Style.END_COLOR
     return True
 
 def firing(maze, starting_row, col, row, finished_row):
@@ -94,15 +109,25 @@ def firing(maze, starting_row, col, row, finished_row):
     fire = True
     index_col = 1
     index_row = starting_row-1
-    symbol = ">"
+    
+    left_mirror = f"{Style.MAGENTA}\\{Style.END_COLOR}"
+    right_mirror = f"{Style.MAGENTA}/{Style.END_COLOR}"
+
+    pointer_right = f"{Style.YELLOW}>{Style.END_COLOR}"
+    pointer_left = f"{Style.YELLOW}<{Style.END_COLOR}"
+    pointer_down = f"{Style.YELLOW}v{Style.END_COLOR}"
+    pointer_up = f"{Style.YELLOW}^{Style.END_COLOR}"
+
+    symbol = pointer_right
+
     previous_symbol = ""
     while fire:
         #print("OVO JE INDEX I ROW NA VRHU", index_row, row, type(index_row), type(row), maze[index_row][index_col],finished_row-1, len(maze))
         if maze[index_row][index_col] in avoid or index_row < 0:
-            print("""
+            print(f"""
                   
                   
-                                KABOOOOOM
+                                {Style.RED}KABOOOOOM{Style.END_COLOR}
                   
                   
                   """)
@@ -110,98 +135,98 @@ def firing(maze, starting_row, col, row, finished_row):
         elif maze[index_row][index_col] == "F":
             time.sleep(0.5)
             #print("BRAVISIMO YOUVE FINISHED IT")
-            sys.exit("""
+            sys.exit(f"""
                      
                      
-                                    BRAVISIMO YOU'VE FINISHED IT
+                                    {Style.GREEN}BRAVISIMO YOU'VE FINISHED IT{Style.END_COLOR}
                      
                      
                      """)
             
         #ZA ZNAK /
-        elif maze[index_row-1][index_col] == "/" and maze[index_row][index_col] == "/" and maze[index_row][index_col-1] == ">":
-            symbol = ">"
+        elif maze[index_row-1][index_col] == right_mirror and maze[index_row][index_col] == right_mirror and maze[index_row][index_col-1] == pointer_right:
+            symbol = pointer_right
             index_row -= 1
             index_col += 1
-        elif maze[index_row][index_col] == "/" and maze[index_row][index_col-1] == "/" and maze[index_row-1][index_col] == "v":
-            symbol = "v"
+        elif maze[index_row][index_col] == right_mirror and maze[index_row][index_col-1] == right_mirror and maze[index_row-1][index_col] == pointer_down:
+            symbol = pointer_down
             index_row += 1
             index_col -= 1
-        elif maze[index_row][index_col] == "/" and maze[index_row][index_col+1] == "/" and maze[index_row+1][index_col] == "^":
-            symbol = "^"
+        elif maze[index_row][index_col] == right_mirror and maze[index_row][index_col+1] == right_mirror and maze[index_row+1][index_col] == pointer_up:
+            symbol = pointer_up
             index_row -= 1
             index_col += 1
-        elif maze[index_row][index_col] == "/" and maze[index_row+1][index_col] == "/" and maze[index_row][index_col+1] == "<":
-            symbol = "<"
+        elif maze[index_row][index_col] == right_mirror and maze[index_row+1][index_col] == right_mirror and maze[index_row][index_col+1] == pointer_left:
+            symbol = pointer_left 
             index_row += 1
             index_col -= 1
-        elif maze[index_row][index_col] == "/" and maze[index_row][index_col-1] == ">" or maze[index_row][index_col-1] == "S" and  maze[index_row][index_col] == "/":
-            symbol = "^"
+        elif maze[index_row][index_col] == right_mirror and maze[index_row][index_col-1] == pointer_right or maze[index_row][index_col-1] == "S" and  maze[index_row][index_col] == right_mirror:
+            symbol = pointer_up
             index_row -= 1
-        elif maze[index_row][index_col] == "/" and maze[index_row+1][index_col] == "^":
-            symbol = ">"
+        elif maze[index_row][index_col] == right_mirror and maze[index_row+1][index_col] == pointer_up:
+            symbol = pointer_right
             index_col += 1
-        elif maze[index_row][index_col] == "/" and maze[index_row-1][index_col] == "v":
-            symbol = "<"
+        elif maze[index_row][index_col] == right_mirror and maze[index_row-1][index_col] == pointer_down:
+            symbol = pointer_left
             index_col -= 1
-        elif maze[index_row][index_col] == "/" and maze[index_row][index_col+1] == "<":
-            symbol = "v"
+        elif maze[index_row][index_col] == right_mirror and maze[index_row][index_col+1] == pointer_left:
+            symbol = pointer_down
             index_row += 1
 
         
 
         #ZA ZNAK \
-        elif maze[index_row][index_col] == "\\" and maze[index_row+1][index_col] == "\\" and maze[index_row][index_col-1] == ">":
-            symbol = ">"
+        elif maze[index_row][index_col] == left_mirror and maze[index_row+1][index_col] == left_mirror and maze[index_row][index_col-1] == pointer_right:
+            symbol = pointer_right
             index_row += 1
             index_col += 1
-        elif maze[index_row][index_col] == "\\" and maze[index_row][index_col-1] == "\\" and maze[index_row+1][index_col] == "^":
-            symbol ="^"
+        elif maze[index_row][index_col] == left_mirror and maze[index_row][index_col-1] == left_mirror and maze[index_row+1][index_col] == pointer_up:
+            symbol =pointer_up
             index_row -= 1
             index_col -= 1
-        elif maze[index_row][index_col] == "\\" and maze[index_row][index_col+1] == "\\" and maze[index_row-1][index_col] == "v":
-            symbol = "v"
+        elif maze[index_row][index_col] == left_mirror and maze[index_row][index_col+1] == left_mirror and maze[index_row-1][index_col] == pointer_down:
+            symbol = pointer_down
             index_row += 1
             index_col += 1
-        elif maze[index_row][index_col] == "\\" and maze[index_row-1][index_col] == "\\" and maze[index_row][index_col+1] == "<":
-            symbol = "<"
+        elif maze[index_row][index_col] == left_mirror and maze[index_row-1][index_col] == left_mirror and maze[index_row][index_col+1] == pointer_left:
+            symbol = pointer_left
             index_row -= 1
             index_col -= 1
-        elif maze[index_row][index_col] == "\\" and maze[index_row][index_col-1] == ">" or maze[index_row][index_col-1] == "S" and  maze[index_row][index_col] == "\\":
-            symbol = "v"
+        elif maze[index_row][index_col] == left_mirror and maze[index_row][index_col-1] == pointer_right or maze[index_row][index_col-1] == "S" and  maze[index_row][index_col] == left_mirror:
+            symbol = pointer_down
             index_row += 1
-        elif maze[index_row][index_col] == "\\" and maze[index_row-1][index_col] == "v":
-            symbol = ">"
+        elif maze[index_row][index_col] == left_mirror and maze[index_row-1][index_col] == pointer_down:
+            symbol = pointer_right
             index_col += 1
-        elif maze[index_row][index_col] == "\\" and maze[index_row][index_col+1] == "<":
-            symbol = "^"
+        elif maze[index_row][index_col] == left_mirror and maze[index_row][index_col+1] == pointer_left:
+            symbol = pointer_up
             index_row -= 1
-        elif maze[index_row][index_col] == "\\" and maze[index_row-1][index_col] == "^":
-            symbol = "<"
+        elif maze[index_row][index_col] == left_mirror and maze[index_row-1][index_col] == pointer_up:
+            symbol = pointer_left
             index_col -= 1
 
 
-        if symbol == ">" and maze[index_row][index_col] != "F":
-            maze[index_row][index_col] = ">"
+        if symbol == pointer_right and maze[index_row][index_col] != "F":
+            maze[index_row][index_col] = pointer_right
             index_col +=1
-        elif symbol == "^" and maze[index_row][index_col] != "F":
-            maze[index_row][index_col] = "^"
+        elif symbol == pointer_up and maze[index_row][index_col] != "F":
+            maze[index_row][index_col] = pointer_up
             index_row -= 1
-        elif symbol == "v":
-            maze[index_row][index_col] = "v"
+        elif symbol == pointer_down:
+            maze[index_row][index_col] = pointer_down
             index_row += 1
-        elif symbol == "<":
-            maze[index_row][index_col] = "<"
+        elif symbol == pointer_left:
+            maze[index_row][index_col] = pointer_left
             index_col -= 1
         if index_row == row:
-                maze[index_row-1][index_col] = "v"
+                maze[index_row-1][index_col] = pointer_down
                 time.sleep(0.5)
                 draw_maze(maze, col, row)
             
                 sys.exit("""
                   
                   
-                                KABOOOOOM
+                                {Style.RED}KABOOOOOM{Style.END_COLOR}
                   
                   
                   """)
@@ -212,8 +237,8 @@ def firing(maze, starting_row, col, row, finished_row):
 
 def main():
     while True:
-        col = int(input("How many col do you want your maze to have, minimum of 5: ",))
-        row = int(input("How many rows do you want your maze to have:, minimum of 5: ",))
+        col = int(input(f"{Style.BLUE}How many col do you want your maze to have, minimum of 5: {Style.END_COLOR}",))
+        row = int(input(f"{Style.BLUE}How many rows do you want your maze to have:, minimum of 5: {Style.END_COLOR}",))
         if col >= 5 and row >= 5:
             break
     maze = creatingNestedList_maze(col, row)
@@ -222,10 +247,10 @@ def main():
     bomb_creation(maze,col,row)
 
     draw_maze(maze,col,row)
-    print("If you want to fire the lazer just type 'fire'.")
-    print("You can put /, \\,  mirrors")
+    print(f"{Style.RED}If you want to fire the lazer just type 'fire'.{Style.END_COLOR}")
+    print(f"{Style.MAGENTA}You can put /, \\,  mirrors{Style.END_COLOR}")
     while True:
-        choice = input("type the coordinates, first col then row (example: 4 3)")
+        choice = input(f"{Style.BLUE}Type the coordinates, first col then row (example: 4 3){Style.END_COLOR}")
         if choice.lower() == "fire":
             firing(maze, starting_row, col, row, finished_row)
         row_col_check = choice.split(" ")
@@ -246,6 +271,7 @@ def main():
             continue
 
         draw_maze(maze,col,row)
-        print('ovo je pocetak', starting_row)
+        
 
-main()
+if __name__ == "__main__":
+    main()

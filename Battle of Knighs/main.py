@@ -1,9 +1,7 @@
 import random, time, sys, os
 
 
-behaviour_agressive = "agressive"
-behaviour_protector = "protect"
-behaviour_neutral = "neutral"
+
 
 
 class Knight:
@@ -28,14 +26,14 @@ class Knight:
         elif self.pattern == behaviour_agressive:
             if _num in range(1,4+1):
                 self.action = 1
-            elif _num in range(4,6+1):
+            elif _num in range(5,6+1):
                 self.action = 2
             elif _num in range(7,9+1):
                 self.action = 3
         elif self.pattern == behaviour_protector:
-            if _num in range(1,2+1):
+            if _num in range(1,3+1):
                 self.action = 1
-            elif _num in range(3,7+1):
+            elif _num in range(4,7+1):
                 self.action = 2
             elif _num in range(8,9+1):
                 self.action = 3
@@ -229,5 +227,8 @@ def main(behaviour_agressive, behaviour_protector,behaviour_neutral):
     
     sys.exit()
 
-
-main(behaviour_agressive,behaviour_protector, behaviour_neutral)
+if __name__ == "__main__":
+    behaviour_agressive = "agressive"
+    behaviour_protector = "protect"
+    behaviour_neutral = "neutral"
+    main(behaviour_agressive,behaviour_protector, behaviour_neutral)
