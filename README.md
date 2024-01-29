@@ -4,12 +4,35 @@
 ## Table of Contents
 
 - [Project List](#project-list)
+- [Project Descriptions](#project-descriptions)
+
+
+
 
 ## Description
-**This text is in blue**: <span style="color:blue">This is some text!</span>
+
+
+
+
+
+
 
 ## Project List 
+
 1. [Project 1: Laser Maze](./Laser%20maze/)
+2. [Project 2: Battle of Knights](./Battle%20of%20Knighs/)
+
+
+## Project Descriptions
+
+### Project 1: Laser Maze
+
+- [Link to to Laser Maze README](./Laser%20maze/README.md)
+
+Your goal is to guide the laser using mirrors "/" and "\" to the finish line while avoiding bombs
+For more detailed description press the link above ^^
+
+
 
 ## Technologies Used
 
