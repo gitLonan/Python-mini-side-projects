@@ -8,4 +8,4 @@
 
 ## Cinema at the beggining
 
-![Alt text](../initial_cinema.PNG)
+![Alt text](../Cinema Booking/initial_cinema.PNG)
