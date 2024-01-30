@@ -1,5 +1,5 @@
 import math, random, time, os, sys
-from csv import writer
+
 import admin
 
 cinema_seats = []
@@ -82,7 +82,7 @@ def main_menu(name):
     """ Main menu without admin access"""
 
     while True:
-        #os.system("cls")
+        os.system("cls")
         stringer_noAdmin = f"""{Style.END_COLOR}
             -_-_-_-_-_-   {Style.MAGENTA}WELCOME TO {name} CINEMA{Style.END_COLOR}   -_-_-_-_-_-
         Current account: {Style.RED}none{Style.END_COLOR}   -type: Admin login--

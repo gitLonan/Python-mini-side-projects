@@ -39,7 +39,7 @@ def admin_main_menu(cinema, user):
     """ Main menu with admin access """
 
     admin_name = user[0]
-    #os.system("cls")
+    os.system("cls")
     stringer_Admin = f"""{Style.END_COLOR}
             -_-_-_-_-_-   {Style.BLACK}WELCOME TO {cinema} CINEMA{Style.END_COLOR}   -_-_-_-_-_-
         Current account: {Style.RED}{admin_name}{Style.END_COLOR} 
@@ -131,7 +131,3 @@ def create_new_adming_account():
     with open("Cinema Booking/admins_for_cinema.csv", '+a', newline='\n') as f:
         writer_object = writer(f)
         writer_object.writerow(new_admin)
-                        
-        
-
-
