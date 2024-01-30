@@ -21,9 +21,12 @@ All of them are pretty clear at what they do, just with the number 3, dont make 
 have to scroll to see it whole.
 
 ## Cinema at the beggining
-At the start this is how it looks, except ones are coloured red and zeros are coloured green. 
+At the start this is how it looks, except ones are coloured red and zeros are coloured green.   
+First two sectors are regular ones but the third one is the famous lovers sector  
+  
 ![Alt text](/Cinema%20Booking/Initial_cinema.PNG)  
-First two sectors are regular ones but the third one is the famous lovers sector
+
+
 
 
 ## Libraries Used
