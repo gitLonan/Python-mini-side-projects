@@ -1,4 +1,4 @@
-import time
+import time, os
 from csv import writer
 
 class Style:
