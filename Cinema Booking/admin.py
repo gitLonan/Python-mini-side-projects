@@ -9,14 +9,12 @@ def admin_log_in():
     with open("Cinema Booking/admins_for_cinema.csv", "r") as f:
         r = reader(f)
         for line in r:
-            print(line)
             name,pas = line[0], line[1]
             user.append((name.strip(), pas.strip()))
             
         f.close()
-    print(user)
-    admin_username = input("Enter user name: ")
-    admin_password = input("Enter password: ")
+    admin_username = input(f"{Style.YELLOW}Enter user name: {Style.END_COLOR}")
+    admin_password = input(f"{Style.YELLOW}Enter password: {Style.END_COLOR}")
     if (admin_username, admin_password) not in user:
         print(f"{Style.RED}User name or password is inccorect{Style.END_COLOR}")
         time.sleep(2)
