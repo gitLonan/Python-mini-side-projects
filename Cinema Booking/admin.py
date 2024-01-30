@@ -1,37 +1,25 @@
 import time, os
 from csv import writer
+from csv import reader
+from style_class import Style
 
-class Style:
-    END_COLOR = '\x1b[0m'
-    BLACK = '\033[30m'
-    RED = '\033[31m'
-    GREEN = '\033[32m'
-    YELLOW = '\033[33m'
-    BLUE = '\033[34m'
-    MAGENTA = '\033[35m'
-    CYAN = '\033[36m'
-    WHITE = '\033[37m'
-    UNDERLINE = '\033[4m'
-    RESET = '\033[0m'
 
 def admin_log_in():
     user = []
-    password = []
     with open("Cinema Booking/admins_for_cinema.csv", "r") as f:
-        for line in f:
-            name,pas = line.split(",")
-            user.append(name.strip())
-            password.append(pas.strip())
+        r = reader(f)
+        for line in r:
+            print(line)
+            name,pas = line[0], line[1]
+            user.append((name.strip(), pas.strip()))
+            
         f.close()
+    print(user)
     admin_username = input("Enter user name: ")
-    if admin_username not in user:
-        print("Wrong user name!")
-        time.sleep(1)
-        return False
     admin_password = input("Enter password: ")
-    if admin_password not in password:
-        print("Wrong password!")
-        time.sleep(1)
+    if (admin_username, admin_password) not in user:
+        print(f"{Style.RED}User name or password is inccorect{Style.END_COLOR}")
+        time.sleep(2)
         return False
     return admin_username, admin_password
 
@@ -128,6 +116,7 @@ def create_new_adming_account():
         elif yes_no.lower() == f"no":
             return 
     new_admin = [new_admin_name, new_admin_password]
-    with open("Cinema Booking/admins_for_cinema.csv", '+a', newline='\n') as f:
+    with open("Cinema Booking/admins_for_cinema.csv", 'a', newline='') as f:
         writer_object = writer(f)
-        writer_object.writerow(new_admin)
+        #writer_object.writerow([''])
+        writer_object.writerow(new_admin + [''])

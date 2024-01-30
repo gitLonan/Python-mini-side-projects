@@ -1,27 +1,11 @@
 import math, random, time, os, sys
-
+from style_class import Style
 import admin
 
 cinema_seats = []
 
 ROW_CINEMA = 12
 COL_CINEMA = 8
-
-
-
-
-class Style:
-    END_COLOR = '\x1b[0m'
-    BLACK = '\033[30m'
-    RED = '\033[31m'
-    GREEN = '\033[32m'
-    YELLOW = '\033[33m'
-    BLUE = '\033[34m'
-    MAGENTA = '\033[35m'
-    CYAN = '\033[36m'
-    WHITE = '\033[37m'
-    UNDERLINE = '\033[4m'
-    RESET = '\033[0m'
 
 def create_cinema_nestedList(row_cinema, col_cinema):
     copy_of_row_cinema = row_cinema
@@ -246,22 +230,22 @@ def main(row_cinema=8, col_cinema=6):
             picked_row_col = booking_from_the_back(number_rows_first_zone, number_rows_second_zone, number_rows_lover_zone)
             current_session_tickets.append(picked_row_col)
 
-        elif choice == 0:
-                                                                               #you've typed in `admin login`
-            user = admin.admin_log_in()
+        elif choice == 0:                                                               #you've typed in `admin login`
+                                                                                        
+            user = admin.admin_log_in()                                                
             if user == False:
                 continue
             while True:
                 admin_choice = admin.admin_main_menu(cinema_name, user)
                 if admin_choice == "end":
                     break
-                elif admin_choice == 1:                               #Reset cinema hall
+                elif admin_choice == 1:                                                 #Reset cinema hall
                     admin.reset_hall(cinema_seats)
                     draw_cinema(number_rows_first_zone, number_rows_second_zone, col_cinema)
                     input(f"{Style.BLUE}Press Enter{Style.END_COLOR}")
-                elif admin_choice == 2:                             #Percentage of bought tickets
+                elif admin_choice == 2:                                                 #Percentage of bought tickets
                     admin.percentage_bought_tickets(cinema_seats)
-                elif admin_choice == 3:                             #Change row and col of cinema hall
+                elif admin_choice == 3:                                                 #Change row and col of cinema hall
                     new_name, num_row, num_col = admin.change_size_of_cinema()
                     cinema_name = new_name
                     row_cinema = int(num_row)
