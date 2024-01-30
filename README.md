@@ -21,6 +21,7 @@ Welcome to the Python Mini Projects Repository!These are quick projects, design 
 
 1. [Project 1: Laser Maze](./Laser%20maze/)
 2. [Project 2: Battle of Knights](./Battle%20of%20Knighs/)
+3. [Project 3: Cinema Booking](./Cinema%20Booking/)
 
 
 ## Project Descriptions
@@ -36,6 +37,12 @@ Your goal is to guide the laser using **mirrors** "/" and "\\" to the finish lin
 - [Link to Battle Knights README](./Battle%20of%20Knighs/README.md)
 
 Fun little automatic battle between two legendary (user named) knights. Choose their behavior and see who wins
+
+### Project 3: Cinema Booking
+
+-   [Link to Cinema Booking README](./Cinema%20Booking/READMME.md)
+
+Explore consumer lvl controls and admin lvl controls with the booking system. For more detailed description press the link above.
 
 
 ## Getting Started:

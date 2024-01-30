@@ -11,7 +11,7 @@ Cinema Booking is about scratching that itch and dopamin rush when you buy ticke
 
 Occupied and not occupied places will be represented by 1, 0 respectively. Ones that are coloured yellow represent current session bought tickets also options 3 and 4 are referred to first two sectors of the cinema hall, last one represents lovers sector. Basically it's for couples and anyone who wants to be alone.  
   
-You can also log in (if you know the user name and password) and you'll get admin lvl access and be able to do diffrent things.
+You can also log in (if you know the user name and password by typing **admin login**) and you'll get admin lvl access and be able to do diffrent things.
   1. Reset cinema hall
   2. Percentage of bought tickets
   3. Change row and col of cinema 

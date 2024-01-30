@@ -16,6 +16,12 @@ When you think you've cracked the maze just type **fire**
                      v          \>>>>>
                      v
 
+### Example of 12x12 grid 
+
+![Alt text](/Laser%20maze/Laser_maze_example.PNG)  
+  
+
+
 
 ## Libraries Used
 
