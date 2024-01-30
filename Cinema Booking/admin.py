@@ -116,5 +116,4 @@ def create_new_adming_account():
     new_admin = [new_admin_name, new_admin_password]
     with open("Cinema Booking/admins_for_cinema.csv", 'a', newline='') as f:
         writer_object = writer(f)
-        #writer_object.writerow([''])
         writer_object.writerow(new_admin + [''])
