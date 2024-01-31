@@ -96,7 +96,7 @@ def main_menu(name):
         
 
 def draw_cinema(number_rows_first_zone, number_rows_second_zone,col_cinema):
-    """ Drawing of cinema hall """
+    """ Cinema Hall drawing """
 
     os.system("cls")
     print("    ", end="")#space before col numbers
