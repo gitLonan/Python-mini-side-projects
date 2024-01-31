@@ -71,8 +71,8 @@ def main_menu(name):
             -_-_-_-_-_-   {Style.MAGENTA}WELCOME TO {name} CINEMA{Style.END_COLOR}   -_-_-_-_-_-
         Current account: {Style.RED}none{Style.END_COLOR}   -type: Admin login--
                         
-                        Cinema Hall is divided in to 3 zones, first two are regular ones and the third one is lover zone, it's for couples,
-                        lovers and anyone who wants to be alone
+                        Cinema Hall is divided into 3 zones, first two are regular ones and the third one is 'lover zone', it's for couples,
+                        and anyone who wants to be alone
                         {Style.RED}if you want to end the booking session type: end{Style.END_COLOR}
 
                                 1. Show current hall
