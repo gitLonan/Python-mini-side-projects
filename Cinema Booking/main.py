@@ -84,7 +84,7 @@ def main_menu(name):
         
                         """
         print(stringer_noAdmin)
-        num = input( Style.BLUE + "Type the number what you want to do: "+Style.END_COLOR)
+        num = input( Style.BLUE + "Enter the number for the option of your choice: "+Style.END_COLOR)
         if num == "end":
             return "end"
         elif num.isnumeric() and int(num) in range(1,4+1):
@@ -142,7 +142,7 @@ def booking(row_cinema, col_cinema):
     occupied = Style.RED + "1" + Style.END_COLOR
     current_session_occupied = Style.YELLOW + "1" + Style.END_COLOR
     while True:
-        check = input(f"{Style.BLUE}Enter the number for the option of your choice(first: row col): {Style.END_COLOR}")
+        check = input(f"{Style.BLUE}Type the row and col you wish to book(first: row col): {Style.END_COLOR}")
         check = check.split(" ")
         if not len(check) == 2:
             continue
