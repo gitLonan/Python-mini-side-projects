@@ -75,7 +75,7 @@ def main_menu(name):
                         and anyone who wants to be alone
                         {Style.RED}if you want to end the booking session type: end{Style.END_COLOR}
 
-                                1. Show Cinema hall
+                                1. Show Cinema Hall
                                 2. Book a seat
                                 3. Book from the front(first available seat in first two zones)
                                 4. Book from the back(first available seat in first two zones)
