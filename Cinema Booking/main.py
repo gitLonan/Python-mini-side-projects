@@ -71,8 +71,8 @@ def main_menu(name):
             -_-_-_-_-_-   {Style.MAGENTA}WELCOME TO {name} CINEMA{Style.END_COLOR}   -_-_-_-_-_-
         Current account: {Style.RED}none{Style.END_COLOR}   -type: Admin login--
                         
-                        Cinema Hall is divided into 3 zones, first two are regular ones and the third one is 'lover zone', it's for couples,
-                        and anyone who wants to be alone
+                        Cinema Hall is divided into 3 zones, first two are regular ones and the third one is 'lover zone',
+                        it's for couples, and anyone who wants to be alone
                         {Style.RED}if you want to end the booking session type: end{Style.END_COLOR}
 
                                 1. Show Cinema Hall1
@@ -137,7 +137,7 @@ def draw_cinema(number_rows_first_zone, number_rows_second_zone,col_cinema):
         print("")
 
 def booking(row_cinema, col_cinema):
-    """ With user input booking based on row and col is made """
+    """ With user input, booking is based on row and col is made """
 
     not_occupied = Style.GREEN + '0' + Style.END_COLOR
     occupied = Style.RED + "1" + Style.END_COLOR
