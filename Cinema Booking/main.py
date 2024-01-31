@@ -142,7 +142,7 @@ def booking(row_cinema, col_cinema):
     occupied = Style.RED + "1" + Style.END_COLOR
     current_session_occupied = Style.YELLOW + "1" + Style.END_COLOR
     while True:
-        check = input(f"{Style.BLUE}Type your what seat you wish to take(first: row col): {Style.END_COLOR}")
+        check = input(f"{Style.BLUE}Enter the number for the option of your choice(first: row col): {Style.END_COLOR}")
         check = check.split(" ")
         if not len(check) == 2:
             continue
