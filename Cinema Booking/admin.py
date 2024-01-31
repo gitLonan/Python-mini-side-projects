@@ -33,9 +33,9 @@ def admin_main_menu(cinema, user):
                         With great power comes great responsibility
                         {Style.RED}if you want to end the admin session type: end{Style.END_COLOR}
 
-                                1. Reset cinema hall
+                                1. Reset Cinema Hall
                                 2. Percentage of bought tickets
-                                3. Change row and col of cinema hall
+                                3. Change row and col of Cinema Hall
                                 4. Add another Admin account
                         """
     print(stringer_Admin)
@@ -74,7 +74,7 @@ def percentage_bought_tickets(cinema_seats):
 def change_size_of_cinema():
     """ Change the size of cinema with row, col and its name, only Admin can do that """
 
-    print(f"{Style.RED}This could take a while, maybe days or even years. Just imagen trying to remodel 10x10 cinema in to 50x50, jeeeeez...don't go to crazy{Style.END_COLOR}")
+    print(f"{Style.RED}This could take a while, maybe days or even years. Just imagen trying to remodel 10x10 cinema into 50x50, jeeeeez...don't go to crazy{Style.END_COLOR}")
     input(f"{Style.BLUE}Press Enter{Style.END_COLOR}")
     while True:
         num_row = input(f"{Style.YELLOW}How many {Style.RED}rows{Style.END_COLOR} {Style.YELLOW}do you want new cinema to: {Style.END_COLOR}")
