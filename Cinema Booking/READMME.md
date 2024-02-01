@@ -4,7 +4,7 @@
 
 Cinema Booking is about scratching that itch and dopamin rush when you buy tickets for a new movie. First you'll not be loged in which means you are just a basic user(consumer), and you'll have some basic options.
 
-  1. Show current hall
+  1. Show Cinema Hall
   2. Book a seat
   3. Book from the front
   4. Book from the back
@@ -12,7 +12,7 @@ Cinema Booking is about scratching that itch and dopamin rush when you buy ticke
 Occupied and not occupied places will be represented by 1, 0 respectively. Ones that are coloured yellow represent current session bought tickets also options 3 and 4 are referred to first two sectors of the cinema hall, last one represents 'lovers zone'. Basically it's for couples and anyone who wants to be alone.  
   
 You can also log in (if you know the user name and password by typing **admin login**) and you'll get admin lvl access and be able to do diffrent things.
-  1. Reset cinema hall
+  1. Reset Cinema Hall
   2. Percentage of bought tickets
   3. Change row and col of cinema 
   4. Add another Admin account
