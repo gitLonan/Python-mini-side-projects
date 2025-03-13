@@ -5,7 +5,7 @@
 Cinema Booking is about scratching that itch and dopamin rush when you buy tickets for a new movie. First you'll not be loged in which means you are just a basic user(consumer), and you'll have some basic options.
 
   1. Show Cinema Hall
-  2. Book a seat
+  2. Book a seat 
   3. Book from the front
   4. Book from the back
 
